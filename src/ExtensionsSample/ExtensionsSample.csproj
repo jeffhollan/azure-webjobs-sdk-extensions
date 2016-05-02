@@ -167,6 +167,7 @@
     <Compile Include="Models\ItemDoc.cs" />
     <Compile Include="SamplesTypeLocator.cs" />
     <Compile Include="Samples\ApiHubSamples.cs" />
+    <Compile Include="Samples\LogicAppSamples.cs" />
     <Compile Include="Samples\MobileAppSamples.cs" />
     <Compile Include="Samples\DocumentDBSamples.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -184,12 +185,10 @@
     <Compile Include="Samples\TableSamples.cs" />
     <Compile Include="Samples\TimerSamples.cs" />
     <Compile Include="Samples\WebHookSamples.cs" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDictionary Include="..\..\CustomDictionary.xml">
@@ -198,6 +197,10 @@
     </CodeAnalysisDictionary>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\WebJobs.Extensions.LogicApps\WebJobs.Extensions.LogicApps.csproj">
+      <Project>{fadf48ad-7266-4d0f-a3ce-32afde0acc5b}</Project>
+      <Name>WebJobs.Extensions.LogicApps</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebJobs.Extensions.ApiHub\WebJobs.Extensions.ApiHub.csproj">
       <Project>{091041ae-378d-42b0-aa0a-6a1f47c0be2d}</Project>
       <Name>WebJobs.Extensions.ApiHub</Name>

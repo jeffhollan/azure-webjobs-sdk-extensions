@@ -37,6 +37,7 @@ namespace ExtensionsSample
             config.UseSample();
             config.UseMobileApps();
             config.UseCore();
+            config.UseLogicApp();
             config.UseDocumentDB();
             config.UseNotificationHubs();
             var sendGridConfiguration = new SendGridConfiguration()
@@ -59,20 +60,21 @@ namespace ExtensionsSample
             // Add or remove types from this list to choose which functions will 
             // be indexed by the JobHost.
             config.TypeLocator = new SamplesTypeLocator(
-                typeof(ErrorMonitoringSamples),
-                typeof(FileSamples),
-                typeof(MiscellaneousSamples),
-                typeof(SampleSamples),
-                typeof(SendGridSamples),
-                typeof(TableSamples),
-                typeof(TimerSamples),
-                typeof(WebHookSamples));
+                //   typeof(ErrorMonitoringSamples),
+                //   typeof(FileSamples),
+                //   typeof(MiscellaneousSamples),
+                //   typeof(SampleSamples),
+                typeof(LogicAppSamples));
+           //     typeof(SendGridSamples),
+            //    typeof(TableSamples),
+            //    typeof(TimerSamples),
+            //    typeof(WebHookSamples));
 
-            host.Call(typeof(MiscellaneousSamples).GetMethod("ExecutionContext"));
-            host.Call(typeof(FileSamples).GetMethod("ReadWrite"));
-            host.Call(typeof(SampleSamples).GetMethod("Sample_BindToStream"));
-            host.Call(typeof(SampleSamples).GetMethod("Sample_BindToString"));
-            host.Call(typeof(TableSamples).GetMethod("CustomBinding"));
+            //host.Call(typeof(MiscellaneousSamples).GetMethod("ExecutionContext"));
+            //host.Call(typeof(FileSamples).GetMethod("ReadWrite"));
+            //host.Call(typeof(SampleSamples).GetMethod("Sample_BindToStream"));
+            //host.Call(typeof(SampleSamples).GetMethod("Sample_BindToString"));
+            //host.Call(typeof(TableSamples).GetMethod("CustomBinding"));
 
             host.RunAndBlock();
         }
